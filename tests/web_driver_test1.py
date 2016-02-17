@@ -31,4 +31,7 @@ class TestStringMethods(unittest.TestCase):
 
     def test_google(self):
         self.driver.get("http://www.google.com")
+        self.driver.execute_script("sauce:job-result=failed")
+        self.driver.execute_script("sauce-job-name=JD!!!")
         self.assertEqual(self.driver.title, "Google", "Unable to load google page")
+        self.driver.execute_script("sauce:context=Logging mah line")
